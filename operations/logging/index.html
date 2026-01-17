@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="PromptX" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Logging & Auditability - PromptX API Developer Portal</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Logging \u0026 Auditability";
+        var mkdocs_page_input_path = "operations/logging.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> PromptX API Developer Portal
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Welcome & Orientation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../orientation/welcome/">Welcome</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../orientation/api-vs-ui/">APIs vs UI</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../orientation/principles/">Core Principles</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Access & Governance</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/access-models/">Access Models</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/authentication/">Authentication & Authorisation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/approval-workflow/">Approval Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/rate-limits/">Rate Limits & Quotas</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">API Capabilities</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capabilities/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capabilities/core-domains/">Core Domains</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capabilities/data-handling/">Data Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capabilities/non-goals/">What APIs Are Not For</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/quickstart/">Quick Start</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/example-use-cases/">Example Use Cases</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/sdks/">SDKs & Libraries</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Operations</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../security/">Security</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Logging & Auditability</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#purpose-of-audit-logging">Purpose of Audit Logging</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#what-is-logged">What Is Logged</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#what-is-not-logged">What Is Not Logged</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#auditability-and-traceability">Auditability and Traceability</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#log-access-and-visibility">Log Access and Visibility</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#retention-and-protection-of-logs">Retention and Protection of Logs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#monitoring-and-alerting">Monitoring and Alerting</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#customer-responsibilities">Customer Responsibilities</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#questions-about-audit-and-logging">Questions About Audit and Logging</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../reliability/">Reliability & Errors</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Versioning & Lifecycle</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lifecycle/versioning/">Versioning</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lifecycle/deprecation/">Deprecation Policy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lifecycle/evolution/">Platform Evolution</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Reference</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/api-reference/">API Reference</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/changelog/">Changelog</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/faq/">FAQ</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Support</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../support/getting-help/">Getting Help</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../support/reporting-issues/">Reporting Issues</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">PromptX API Developer Portal</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Operations</li>
+      <li class="breadcrumb-item active">Logging & Auditability</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="audit-logging-observability">Audit, Logging &amp; Observability</h1>
+<p>PromptX is designed to support enterprise governance, security oversight, and compliance requirements through <strong>structured logging and auditability</strong>.</p>
+<p>This page explains <strong>what is logged</strong>, <strong>why it is logged</strong>, and <strong>how audit information is used</strong>, without exposing sensitive operational details.</p>
+<hr />
+<h2 id="purpose-of-audit-logging">Purpose of Audit Logging</h2>
+<p>Audit logging in PromptX exists to:
+- Support security monitoring and incident investigation
+- Enable compliance and regulatory review
+- Provide traceability of API usage
+- Detect misuse or anomalous behaviour
+- Support operational reliability</p>
+<p>Logging is designed for <strong>accountability and assurance</strong>, not surveillance.</p>
+<hr />
+<h2 id="what-is-logged">What Is Logged</h2>
+<p>PromptX logs relevant metadata associated with API and platform activity, which may include:
+- Authentication and access events
+- API invocation metadata (e.g. timestamp, capability invoked)
+- Tenant and credential identifiers
+- Success and failure indicators
+- Administrative and configuration changes</p>
+<p>Logs focus on <strong>who did what and when</strong>, not on monitoring user intent.</p>
+<hr />
+<h2 id="what-is-not-logged">What Is Not Logged</h2>
+<p>To protect privacy and data minimisation principles:
+- Full prompt or content payloads are not logged by default
+- Sensitive customer data is not logged unnecessarily
+- Logs are not used for behavioural profiling</p>
+<p>Logging is aligned with PromptX data protection and privacy commitments.</p>
+<hr />
+<h2 id="auditability-and-traceability">Auditability and Traceability</h2>
+<p>Audit logs are designed to provide:
+- Traceability of actions across users, services, and tenants
+- Evidence for internal and external audits
+- Support for forensic analysis when required</p>
+<p>Audit data supports accountability without exposing proprietary or personal content.</p>
+<hr />
+<h2 id="log-access-and-visibility">Log Access and Visibility</h2>
+<p>Access to logs is restricted and governed:
+- Logs are accessible only to authorised personnel
+- Administrative access is role-controlled
+- Customer visibility into logs may vary by deployment and agreement</p>
+<p>Logs are not publicly accessible.</p>
+<hr />
+<h2 id="retention-and-protection-of-logs">Retention and Protection of Logs</h2>
+<p>Audit logs are:
+- Retained for defined periods based on operational and regulatory needs
+- Protected against unauthorised access
+- Stored securely with appropriate access controls</p>
+<p>Retention periods may vary depending on environment and contractual context.</p>
+<hr />
+<h2 id="monitoring-and-alerting">Monitoring and Alerting</h2>
+<p>PromptX uses logs and telemetry to:
+- Detect abnormal or suspicious activity
+- Identify reliability or performance issues
+- Trigger alerts for operational or security review</p>
+<p>Monitoring is focused on <strong>platform health and risk</strong>, not individual user behaviour.</p>
+<hr />
+<h2 id="customer-responsibilities">Customer Responsibilities</h2>
+<p>Customers are responsible for:
+- Using audit information appropriately
+- Aligning PromptX usage with organisational policies
+- Integrating PromptX audit outputs with their own governance processes where applicable</p>
+<p>PromptX provides audit support but does not replace organisational oversight.</p>
+<hr />
+<h2 id="questions-about-audit-and-logging">Questions About Audit and Logging</h2>
+<p>If you have questions about audit logging, compliance support, or observability, contact the PromptX team.</p>
+<div style="margin-top:1.5rem">
+<a href="mailto:promptx@ve3.global
+?subject=PromptX%20Audit%20and%20Logging%20Query
+&body=Organisation:%0D%0AUse%20Case:%0D%0ACompliance%20Context:%0D%0AQuestion:"
+class="md-button md-button--primary">
+📊 Contact About Audit & Logs
+</a>
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../security/" class="btn btn-neutral float-left" title="Security"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../reliability/" class="btn btn-neutral float-right" title="Reliability & Errors">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../security/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../reliability/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

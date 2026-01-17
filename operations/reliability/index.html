@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="PromptX" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Reliability & Errors - PromptX API Developer Portal</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Reliability \u0026 Errors";
+        var mkdocs_page_input_path = "operations/reliability.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> PromptX API Developer Portal
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Welcome & Orientation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../orientation/welcome/">Welcome</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../orientation/api-vs-ui/">APIs vs UI</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../orientation/principles/">Core Principles</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Access & Governance</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/access-models/">Access Models</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/authentication/">Authentication & Authorisation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/approval-workflow/">Approval Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/rate-limits/">Rate Limits & Quotas</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">API Capabilities</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capabilities/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capabilities/core-domains/">Core Domains</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capabilities/data-handling/">Data Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capabilities/non-goals/">What APIs Are Not For</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/quickstart/">Quick Start</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/example-use-cases/">Example Use Cases</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/sdks/">SDKs & Libraries</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Operations</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../security/">Security</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../logging/">Logging & Auditability</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Reliability & Errors</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#reliability-philosophy">Reliability Philosophy</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#categories-of-errors">Categories of Errors</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#client-side-errors">Client-Side Errors</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#server-side-errors">Server-Side Errors</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#policy-and-governance-errors">Policy and Governance Errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#error-responses">Error Responses</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#retry-and-backoff-guidance">Retry and Backoff Guidance</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#when-to-retry">When to Retry</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#when-not-to-retry">When NOT to Retry</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#idempotency-and-safe-replays">Idempotency and Safe Replays</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#graceful-degradation">Graceful Degradation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#observability-and-correlation">Observability and Correlation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#customer-responsibilities">Customer Responsibilities</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#reporting-reliability-issues">Reporting Reliability Issues</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Versioning & Lifecycle</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lifecycle/versioning/">Versioning</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lifecycle/deprecation/">Deprecation Policy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lifecycle/evolution/">Platform Evolution</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Reference</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/api-reference/">API Reference</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/changelog/">Changelog</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/faq/">FAQ</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Support</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../support/getting-help/">Getting Help</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../support/reporting-issues/">Reporting Issues</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">PromptX API Developer Portal</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Operations</li>
+      <li class="breadcrumb-item active">Reliability & Errors</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="error-handling-reliability">Error Handling &amp; Reliability</h1>
+<p>PromptX APIs are designed to operate reliably at enterprise scale.<br />
+However, like all distributed systems, errors can occur.</p>
+<p>This page explains <strong>how errors are categorised</strong>, <strong>how they should be handled</strong>, and <strong>what developers can expect</strong> when something goes wrong.</p>
+<hr />
+<h2 id="reliability-philosophy">Reliability Philosophy</h2>
+<p>PromptX follows these reliability principles:</p>
+<ul>
+<li>
+<p><strong>Fail Predictably</strong><br />
+  Errors are explicit and structured rather than silent or ambiguous.</p>
+</li>
+<li>
+<p><strong>Fail Safely</strong><br />
+  Errors should not result in unintended data exposure or unsafe behaviour.</p>
+</li>
+<li>
+<p><strong>Support Recovery</strong><br />
+  Errors are designed to enable retries, fallback, or graceful degradation.</p>
+</li>
+<li>
+<p><strong>Transparency Without Leakage</strong><br />
+  Error responses provide useful context without exposing sensitive internals.</p>
+</li>
+</ul>
+<hr />
+<h2 id="categories-of-errors">Categories of Errors</h2>
+<p>Errors returned by PromptX APIs generally fall into the following categories.</p>
+<h3 id="client-side-errors">Client-Side Errors</h3>
+<p>These occur when a request cannot be processed due to client input or configuration.</p>
+<p>Examples include:
+- Authentication or authorisation failures
+- Invalid or malformed requests
+- Requests outside approved scope or policy</p>
+<p>Client-side errors typically require <strong>request correction</strong>, not retries.</p>
+<hr />
+<h3 id="server-side-errors">Server-Side Errors</h3>
+<p>These occur when the platform encounters an internal issue.</p>
+<p>Examples include:
+- Temporary service unavailability
+- Internal processing errors
+- Dependency failures</p>
+<p>Server-side errors are typically <strong>transient</strong> and may be retried safely.</p>
+<hr />
+<h3 id="policy-and-governance-errors">Policy and Governance Errors</h3>
+<p>These occur when a request violates governance or policy constraints.</p>
+<p>Examples include:
+- Exceeding approved usage limits
+- Attempting unauthorised capabilities
+- Accessing restricted resources</p>
+<p>Such errors indicate a <strong>governance boundary</strong>, not a technical fault.</p>
+<hr />
+<h2 id="error-responses">Error Responses</h2>
+<p>PromptX API error responses are structured to provide:
+- A clear error category
+- A human-readable summary
+- Context for diagnosis
+- A stable structure for programmatic handling</p>
+<p>Error responses avoid exposing:
+- Internal system architecture
+- Sensitive operational details
+- Customer data or prompts</p>
+<hr />
+<h2 id="retry-and-backoff-guidance">Retry and Backoff Guidance</h2>
+<h3 id="when-to-retry">When to Retry</h3>
+<p>Retries may be appropriate when:
+- Errors indicate transient server-side issues
+- Network interruptions occur
+- Rate limiting responses advise retry-after behaviour</p>
+<h3 id="when-not-to-retry">When NOT to Retry</h3>
+<p>Retries should not be used when:
+- Requests fail due to invalid input
+- Authentication or authorisation fails
+- Policy violations are returned</p>
+<p>Uncontrolled retries can worsen failures and may trigger additional controls.</p>
+<hr />
+<h2 id="idempotency-and-safe-replays">Idempotency and Safe Replays</h2>
+<p>Where applicable, PromptX APIs are designed to support:
+- Idempotent operations
+- Safe replay of requests after transient failures</p>
+<p>Developers should ensure:
+- Requests can be safely retried
+- Duplicate effects are avoided</p>
+<hr />
+<h2 id="graceful-degradation">Graceful Degradation</h2>
+<p>For production systems, PromptX recommends:
+- Fallback user experiences
+- Clear user messaging when AI assistance is unavailable
+- Continued operation of core business logic without AI dependency</p>
+<p>AI should enhance systems, not become a single point of failure.</p>
+<hr />
+<h2 id="observability-and-correlation">Observability and Correlation</h2>
+<p>Error events are:
+- Logged for audit and investigation
+- Correlatable with request metadata
+- Used to improve platform reliability</p>
+<p>Where supported, error identifiers may be provided to assist with support requests.</p>
+<hr />
+<h2 id="customer-responsibilities">Customer Responsibilities</h2>
+<p>Customers are responsible for:
+- Implementing appropriate error handling and retries
+- Monitoring integration health
+- Responding appropriately to policy-related errors</p>
+<p>PromptX provides reliable signals but does not manage customer-side recovery logic.</p>
+<hr />
+<h2 id="reporting-reliability-issues">Reporting Reliability Issues</h2>
+<p>If you encounter repeated or unexpected errors, report the issue so it can be investigated.</p>
+<div style="margin-top:1.5rem">
+<a href="mailto:promptx@ve3.global
+?subject=PromptX%20API%20Reliability%20Issue
+&body=Organisation:%0D%0AEnvironment:%0D%0AError%20Observed:%0D%0ATime%20Window:%0D%0AImpact:"
+class="md-button md-button--primary">
+⚠️ Report Reliability Issue
+</a>
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../logging/" class="btn btn-neutral float-left" title="Logging & Auditability"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../lifecycle/versioning/" class="btn btn-neutral float-right" title="Versioning">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../logging/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../lifecycle/versioning/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

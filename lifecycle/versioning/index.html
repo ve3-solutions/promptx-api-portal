@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="PromptX" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Versioning - PromptX API Developer Portal</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Versioning";
+        var mkdocs_page_input_path = "lifecycle/versioning.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> PromptX API Developer Portal
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Welcome & Orientation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../orientation/welcome/">Welcome</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../orientation/api-vs-ui/">APIs vs UI</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../orientation/principles/">Core Principles</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Access & Governance</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/access-models/">Access Models</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/authentication/">Authentication & Authorisation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/approval-workflow/">Approval Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/rate-limits/">Rate Limits & Quotas</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">API Capabilities</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capabilities/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capabilities/core-domains/">Core Domains</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capabilities/data-handling/">Data Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capabilities/non-goals/">What APIs Are Not For</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/quickstart/">Quick Start</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/example-use-cases/">Example Use Cases</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/sdks/">SDKs & Libraries</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Operations</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operations/security/">Security</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operations/logging/">Logging & Auditability</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operations/reliability/">Reliability & Errors</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Versioning & Lifecycle</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Versioning</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#versioning-principles">Versioning Principles</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#api-versioning-model">API Versioning Model</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#what-constitutes-a-new-api-version">What Constitutes a New API Version</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#changes-within-a-version">Changes Within a Version</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#version-support-and-lifecycle">Version Support and Lifecycle</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#relationship-to-sdk-versioning">Relationship to SDK Versioning</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#version-selection-and-responsibility">Version Selection and Responsibility</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#preview-and-experimental-versions">Preview and Experimental Versions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#questions-about-api-versioning">Questions About API Versioning</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../deprecation/">Deprecation Policy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../evolution/">Platform Evolution</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Reference</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/api-reference/">API Reference</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/changelog/">Changelog</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/faq/">FAQ</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Support</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../support/getting-help/">Getting Help</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../support/reporting-issues/">Reporting Issues</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">PromptX API Developer Portal</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Versioning & Lifecycle</li>
+      <li class="breadcrumb-item active">Versioning</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="api-versioning">API Versioning</h1>
+<p>PromptX APIs are designed for long-lived enterprise integrations.<br />
+API versioning exists to allow the platform to evolve <strong>without breaking existing consumers</strong> and to provide predictability for customers operating at scale.</p>
+<p>This page explains how API versions are defined, how changes are introduced, and what customers can expect over time.</p>
+<hr />
+<h2 id="versioning-principles">Versioning Principles</h2>
+<p>PromptX follows these principles when versioning APIs:</p>
+<ul>
+<li>
+<p><strong>Predictability</strong><br />
+  API behaviour within a version remains stable.</p>
+</li>
+<li>
+<p><strong>Backward Compatibility First</strong><br />
+  Non-breaking changes are preferred wherever possible.</p>
+</li>
+<li>
+<p><strong>Explicit Change Boundaries</strong><br />
+  Breaking changes are introduced only through new API versions.</p>
+</li>
+<li>
+<p><strong>Governed Exposure</strong><br />
+  New versions may be gated or limited based on risk and readiness.</p>
+</li>
+<li>
+<p><strong>Clear Communication</strong><br />
+  Version changes are documented and communicated in advance.</p>
+</li>
+</ul>
+<hr />
+<h2 id="api-versioning-model">API Versioning Model</h2>
+<p>PromptX APIs are versioned explicitly.</p>
+<p>Versions may be expressed through one or more of the following mechanisms:
+- Versioned base paths (e.g. <code>/v1</code>, <code>/v2</code>)
+- Version identifiers in headers
+- Versioned SDK releases aligned to API versions</p>
+<p>The exact mechanism may vary by capability, but the intent remains consistent.</p>
+<hr />
+<h2 id="what-constitutes-a-new-api-version">What Constitutes a New API Version</h2>
+<p>A new API version may be introduced when changes include:
+- Breaking request or response schema changes
+- Behavioural changes that alter output semantics
+- Changes to authentication or authorisation models
+- Changes that impact integration assumptions</p>
+<p>Minor enhancements that do not affect compatibility are typically introduced within the same version.</p>
+<hr />
+<h2 id="changes-within-a-version">Changes Within a Version</h2>
+<p>Within an existing API version, PromptX may introduce:
+- New optional fields
+- Performance improvements
+- Bug fixes
+- Additional capabilities that do not alter existing behaviour</p>
+<p>Such changes are designed to be <strong>non-breaking</strong>.</p>
+<hr />
+<h2 id="version-support-and-lifecycle">Version Support and Lifecycle</h2>
+<p>Each API version follows a defined lifecycle:
+- <strong>Active</strong> – Fully supported and recommended
+- <strong>Deprecated</strong> – Still functional but scheduled for retirement
+- <strong>Retired</strong> – No longer available</p>
+<p>Deprecation and retirement follow the documented <strong>Deprecation Policy</strong> and are communicated in advance.</p>
+<hr />
+<h2 id="relationship-to-sdk-versioning">Relationship to SDK Versioning</h2>
+<p>SDK versions are aligned with API versions but are versioned independently.</p>
+<ul>
+<li>An SDK may support multiple API versions</li>
+<li>SDK updates may include non-breaking improvements</li>
+<li>SDK deprecation does not automatically imply API deprecation</li>
+</ul>
+<p>Customers are encouraged to align SDK and API versions deliberately.</p>
+<hr />
+<h2 id="version-selection-and-responsibility">Version Selection and Responsibility</h2>
+<p>Customers are responsible for:
+- Selecting the appropriate API version
+- Testing integrations against supported versions
+- Planning upgrades as part of normal lifecycle management</p>
+<p>PromptX provides documentation and guidance but does not automatically migrate integrations.</p>
+<hr />
+<h2 id="preview-and-experimental-versions">Preview and Experimental Versions</h2>
+<p>Some API versions or capabilities may be marked as:
+- Preview
+- Limited availability
+- Experimental</p>
+<p>Such versions:
+- May change without full backward compatibility
+- Are not guaranteed to reach general availability
+- Should not be used for critical production workloads unless explicitly approved</p>
+<hr />
+<h2 id="questions-about-api-versioning">Questions About API Versioning</h2>
+<p>If you have questions about API versions, compatibility, or upgrade planning, contact the PromptX team.</p>
+<div style="margin-top:1.5rem">
+<a href="mailto:promptx@ve3.global
+?subject=PromptX%20API%20Versioning%20Query
+&body=Organisation:%0D%0ACurrent%20API%20Version:%0D%0AIntegration%20Context:%0D%0AConcern:"
+class="md-button md-button--primary">
+🔢 Contact About API Versioning
+</a>
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../operations/reliability/" class="btn btn-neutral float-left" title="Reliability & Errors"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../deprecation/" class="btn btn-neutral float-right" title="Deprecation Policy">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../operations/reliability/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../deprecation/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

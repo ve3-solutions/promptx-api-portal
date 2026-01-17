@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="PromptX" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>FAQ - PromptX API Developer Portal</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "FAQ";
+        var mkdocs_page_input_path = "reference/faq.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> PromptX API Developer Portal
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Welcome & Orientation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../orientation/welcome/">Welcome</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../orientation/api-vs-ui/">APIs vs UI</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../orientation/principles/">Core Principles</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Access & Governance</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/access-models/">Access Models</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/authentication/">Authentication & Authorisation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/approval-workflow/">Approval Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/rate-limits/">Rate Limits & Quotas</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">API Capabilities</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capabilities/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capabilities/core-domains/">Core Domains</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capabilities/data-handling/">Data Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capabilities/non-goals/">What APIs Are Not For</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/quickstart/">Quick Start</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/example-use-cases/">Example Use Cases</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/sdks/">SDKs & Libraries</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Operations</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operations/security/">Security</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operations/logging/">Logging & Auditability</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operations/reliability/">Reliability & Errors</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Versioning & Lifecycle</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lifecycle/versioning/">Versioning</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lifecycle/deprecation/">Deprecation Policy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lifecycle/evolution/">Platform Evolution</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Reference</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../api-reference/">API Reference</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../changelog/">Changelog</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">FAQ</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#general-questions">General Questions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#what-is-promptx">What is PromptX?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#who-are-promptx-apis-designed-for">Who are PromptX APIs designed for?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#access-governance">Access &amp; Governance</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#why-is-api-access-restricted">Why is API access restricted?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#how-do-i-request-api-access">How do I request API access?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#can-api-access-be-revoked">Can API access be revoked?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#technical-questions">Technical Questions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#are-promptx-apis-model-specific">Are PromptX APIs model-specific?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#can-i-use-promptx-apis-for-public-facing-applications">Can I use PromptX APIs for public-facing applications?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#is-there-a-sandbox-environment">Is there a sandbox environment?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#data-privacy-security">Data, Privacy &amp; Security</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#does-promptx-store-or-train-on-my-data">Does PromptX store or train on my data?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#how-is-customer-data-protected">How is customer data protected?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#are-prompts-and-responses-logged">Are prompts and responses logged?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#reliability-operations">Reliability &amp; Operations</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#what-happens-if-the-api-is-unavailable">What happens if the API is unavailable?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#how-are-breaking-changes-handled">How are breaking changes handled?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sdks-documentation">SDKs &amp; Documentation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#are-sdks-required-to-use-promptx-apis">Are SDKs required to use PromptX APIs?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#why-isnt-full-api-documentation-public">Why isn’t full API documentation public?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#support-escalation">Support &amp; Escalation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#how-do-i-get-help">How do I get help?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#how-do-i-report-a-security-or-reliability-issue">How do I report a security or reliability issue?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#still-have-questions">Still Have Questions?</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Support</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../support/getting-help/">Getting Help</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../support/reporting-issues/">Reporting Issues</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">PromptX API Developer Portal</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Reference</li>
+      <li class="breadcrumb-item active">FAQ</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="frequently-asked-questions-faq">Frequently Asked Questions (FAQ)</h1>
+<p>This page answers common questions about PromptX APIs, governance, security, and integration.</p>
+<p>If your question is not answered here, contact the PromptX team using the links provided throughout the portal.</p>
+<hr />
+<h2 id="general-questions">General Questions</h2>
+<h3 id="what-is-promptx">What is PromptX?</h3>
+<p>PromptX is an enterprise-grade AI platform designed to enable organisations to adopt generative AI <strong>safely, securely, and at scale</strong>.</p>
+<p>PromptX combines:
+- Governed AI interactions
+- Knowledge grounding
+- Policy enforcement
+- Auditability
+- Human accountability</p>
+<hr />
+<h3 id="who-are-promptx-apis-designed-for">Who are PromptX APIs designed for?</h3>
+<p>PromptX APIs are designed for:
+- Enterprise engineering teams
+- Platform and integration teams
+- Public-sector and regulated organisations
+- Internal application and workflow integrations</p>
+<p>They are <strong>not</strong> designed for unrestricted consumer-facing AI products.</p>
+<hr />
+<h2 id="access-governance">Access &amp; Governance</h2>
+<h3 id="why-is-api-access-restricted">Why is API access restricted?</h3>
+<p>PromptX APIs are powerful capabilities that operate within organisational and regulatory boundaries.</p>
+<p>Restricted access ensures:
+- Responsible use
+- Policy compliance
+- Auditability
+- Protection against misuse</p>
+<p>This is a deliberate design choice, not a limitation.</p>
+<hr />
+<h3 id="how-do-i-request-api-access">How do I request API access?</h3>
+<p>API access requests are submitted via email and reviewed for:
+- Business purpose
+- Risk and policy alignment
+- Intended usage patterns</p>
+<p>Approved requests are issued scoped credentials.</p>
+<hr />
+<h3 id="can-api-access-be-revoked">Can API access be revoked?</h3>
+<p>Yes. API access may be revoked if:
+- Usage falls outside approved intent
+- Security risks are identified
+- Credentials are compromised
+- Access is no longer required</p>
+<p>Revocation is part of responsible governance.</p>
+<hr />
+<h2 id="technical-questions">Technical Questions</h2>
+<h3 id="are-promptx-apis-model-specific">Are PromptX APIs model-specific?</h3>
+<p>No. PromptX APIs abstract underlying AI models.</p>
+<p>This:
+- Avoids vendor lock-in
+- Allows model upgrades without breaking integrations
+- Ensures consistent governance regardless of model provider</p>
+<hr />
+<h3 id="can-i-use-promptx-apis-for-public-facing-applications">Can I use PromptX APIs for public-facing applications?</h3>
+<p>Yes, <strong>with approval</strong>.</p>
+<p>Public-facing use cases (such as government information services) are supported when:
+- Knowledge sources are controlled
+- Prompts are governed
+- Safeguards are in place
+- Usage is monitored</p>
+<p>Each case is reviewed individually.</p>
+<hr />
+<h3 id="is-there-a-sandbox-environment">Is there a sandbox environment?</h3>
+<p>Sandbox or non-production environments may be provided depending on customer context and use case.</p>
+<p>Availability and scope are determined during the access approval process.</p>
+<hr />
+<h2 id="data-privacy-security">Data, Privacy &amp; Security</h2>
+<h3 id="does-promptx-store-or-train-on-my-data">Does PromptX store or train on my data?</h3>
+<p>PromptX does not claim ownership of customer data.</p>
+<p>Customer data is processed only to deliver the service and is not used to train public or shared AI models without explicit agreement.</p>
+<hr />
+<h3 id="how-is-customer-data-protected">How is customer data protected?</h3>
+<p>PromptX enforces:
+- Tenant isolation
+- Secure transport (TLS)
+- Role-based access controls
+- Data handling and retention policies</p>
+<p>API access does not bypass these protections.</p>
+<hr />
+<h3 id="are-prompts-and-responses-logged">Are prompts and responses logged?</h3>
+<p>PromptX logs metadata required for audit and security purposes.</p>
+<p>Full prompt or response content is not logged unnecessarily and logging practices align with data minimisation principles.</p>
+<hr />
+<h2 id="reliability-operations">Reliability &amp; Operations</h2>
+<h3 id="what-happens-if-the-api-is-unavailable">What happens if the API is unavailable?</h3>
+<p>PromptX APIs are designed for reliability, but transient failures may occur.</p>
+<p>Customers are expected to:
+- Implement appropriate error handling
+- Use retries where appropriate
+- Design fallback behaviour</p>
+<p>AI should enhance systems, not be a single point of failure.</p>
+<hr />
+<h3 id="how-are-breaking-changes-handled">How are breaking changes handled?</h3>
+<p>Breaking changes are introduced only through:
+- Explicit API versioning
+- Advance communication
+- Defined deprecation periods</p>
+<p>PromptX does not remove functionality without notice.</p>
+<hr />
+<h2 id="sdks-documentation">SDKs &amp; Documentation</h2>
+<h3 id="are-sdks-required-to-use-promptx-apis">Are SDKs required to use PromptX APIs?</h3>
+<p>No. SDKs are optional.</p>
+<p>Some customers prefer SDKs for convenience and guardrails, while others integrate directly with APIs.</p>
+<p>Both approaches are supported and governed.</p>
+<hr />
+<h3 id="why-isnt-full-api-documentation-public">Why isn’t full API documentation public?</h3>
+<p>Detailed API specifications are shared with approved consumers to:
+- Prevent misuse
+- Align documentation access with governance
+- Reduce risk exposure</p>
+<p>This is standard practice for enterprise platforms.</p>
+<hr />
+<h2 id="support-escalation">Support &amp; Escalation</h2>
+<h3 id="how-do-i-get-help">How do I get help?</h3>
+<p>Support is provided through:
+- Organisational administrators
+- Approved support channels
+- PromptX platform support teams (where applicable)</p>
+<p>Escalation paths depend on severity and impact.</p>
+<hr />
+<h3 id="how-do-i-report-a-security-or-reliability-issue">How do I report a security or reliability issue?</h3>
+<p>Security or reliability concerns should be reported promptly using the <strong>Report Issue</strong> option in the Support section.</p>
+<p>Responsible reporting helps keep the platform safe for all users.</p>
+<hr />
+<h2 id="still-have-questions">Still Have Questions?</h2>
+<p>If you have additional questions that are not covered here, contact the PromptX team.</p>
+<div style="margin-top:1.5rem">
+<a href="mailto:promptx@ve3.global
+?subject=PromptX%20API%20FAQ%20Query
+&body=Organisation:%0D%0AQuestion:%0D%0AContext:"
+class="md-button md-button--primary">
+❓ Contact PromptX Team
+</a>
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../changelog/" class="btn btn-neutral float-left" title="Changelog"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../support/getting-help/" class="btn btn-neutral float-right" title="Getting Help">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../changelog/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../support/getting-help/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

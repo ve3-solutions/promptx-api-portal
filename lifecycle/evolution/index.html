@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="PromptX" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Platform Evolution - PromptX API Developer Portal</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Platform Evolution";
+        var mkdocs_page_input_path = "lifecycle/evolution.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> PromptX API Developer Portal
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Welcome & Orientation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../orientation/welcome/">Welcome</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../orientation/api-vs-ui/">APIs vs UI</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../orientation/principles/">Core Principles</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Access & Governance</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/access-models/">Access Models</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/authentication/">Authentication & Authorisation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/approval-workflow/">Approval Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/rate-limits/">Rate Limits & Quotas</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">API Capabilities</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capabilities/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capabilities/core-domains/">Core Domains</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capabilities/data-handling/">Data Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capabilities/non-goals/">What APIs Are Not For</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/quickstart/">Quick Start</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/example-use-cases/">Example Use Cases</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/sdks/">SDKs & Libraries</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Operations</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operations/security/">Security</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operations/logging/">Logging & Auditability</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operations/reliability/">Reliability & Errors</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Versioning & Lifecycle</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../versioning/">Versioning</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../deprecation/">Deprecation Policy</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Platform Evolution</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#evolution-philosophy">Evolution Philosophy</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#what-drives-platform-evolution">What Drives Platform Evolution</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#types-of-platform-changes">Types of Platform Changes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#non-functional-improvements">Non-Functional Improvements</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#functional-enhancements">Functional Enhancements</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#experimental-or-preview-capabilities">Experimental or Preview Capabilities</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#backward-compatibility">Backward Compatibility</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#relationship-to-apis-and-sdks">Relationship to APIs and SDKs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#no-roadmap-commitments">No Roadmap Commitments</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#customer-impact-and-communication">Customer Impact and Communication</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#customer-responsibilities">Customer Responsibilities</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#questions-about-platform-evolution">Questions About Platform Evolution</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Reference</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/api-reference/">API Reference</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/changelog/">Changelog</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../reference/faq/">FAQ</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Support</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../support/getting-help/">Getting Help</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../support/reporting-issues/">Reporting Issues</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">PromptX API Developer Portal</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Versioning & Lifecycle</li>
+      <li class="breadcrumb-item active">Platform Evolution</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="platform-evolution">Platform Evolution</h1>
+<p>PromptX is designed as a long-lived enterprise platform that evolves deliberately, safely, and transparently.</p>
+<p>This page explains <strong>how PromptX evolves</strong>, <strong>what customers can expect from change</strong>, and <strong>how evolution is balanced with stability</strong>.</p>
+<hr />
+<h2 id="evolution-philosophy">Evolution Philosophy</h2>
+<p>PromptX evolves according to the following principles:</p>
+<ul>
+<li>
+<p><strong>Stability Over Novelty</strong><br />
+  New capabilities must not compromise existing integrations or governance.</p>
+</li>
+<li>
+<p><strong>Enterprise-First Change</strong><br />
+  Changes are evaluated through the lens of enterprise risk, compliance, and operational impact.</p>
+</li>
+<li>
+<p><strong>Incremental Improvement</strong><br />
+  Evolution occurs through small, controlled steps rather than disruptive rewrites.</p>
+</li>
+<li>
+<p><strong>Governance Continuity</strong><br />
+  New capabilities inherit existing security, policy, and audit controls by default.</p>
+</li>
+</ul>
+<p>Evolution is intentional, not experimental by default.</p>
+<hr />
+<h2 id="what-drives-platform-evolution">What Drives Platform Evolution</h2>
+<p>Platform evolution may be driven by:
+- Customer needs and feedback
+- Regulatory or compliance changes
+- Security improvements
+- Reliability and performance optimisation
+- Advances in AI models and techniques
+- Operational learnings from real-world usage</p>
+<p>Not all drivers result in visible feature changes.</p>
+<hr />
+<h2 id="types-of-platform-changes">Types of Platform Changes</h2>
+<h3 id="non-functional-improvements">Non-Functional Improvements</h3>
+<p>These include:
+- Performance optimisations
+- Scalability enhancements
+- Reliability improvements
+- Operational tooling updates</p>
+<p>Such changes typically do not impact integrations.</p>
+<hr />
+<h3 id="functional-enhancements">Functional Enhancements</h3>
+<p>Examples include:
+- New API capabilities
+- Expanded configuration options
+- Additional governance controls
+- New integration patterns</p>
+<p>Functional enhancements are introduced cautiously and may be gated.</p>
+<hr />
+<h3 id="experimental-or-preview-capabilities">Experimental or Preview Capabilities</h3>
+<p>Some features may be introduced as:
+- Limited availability
+- Preview or pilot features
+- Customer-specific trials</p>
+<p>These capabilities:
+- Are explicitly labelled
+- May change or be withdrawn
+- Are not guaranteed to become generally available</p>
+<hr />
+<h2 id="backward-compatibility">Backward Compatibility</h2>
+<p>PromptX prioritises backward compatibility wherever possible.</p>
+<p>When backward compatibility cannot be maintained:
+- Changes follow the documented Deprecation Policy
+- Customers are provided with advance notice
+- Migration guidance is supplied where applicable</p>
+<p>Backward compatibility is a design goal, not an absolute guarantee.</p>
+<hr />
+<h2 id="relationship-to-apis-and-sdks">Relationship to APIs and SDKs</h2>
+<p>Platform evolution may affect:
+- API behaviour
+- SDK capabilities
+- Configuration options
+- Operational characteristics</p>
+<p>APIs and SDKs evolve in alignment with platform changes but remain subject to their own versioning and deprecation rules.</p>
+<hr />
+<h2 id="no-roadmap-commitments">No Roadmap Commitments</h2>
+<p>Any references to future capabilities are:
+- Indicative only
+- Non-binding
+- Subject to change</p>
+<p>PromptX does not publish or commit to fixed feature delivery timelines through this portal.</p>
+<p>This protects customers from reliance on speculative functionality.</p>
+<hr />
+<h2 id="customer-impact-and-communication">Customer Impact and Communication</h2>
+<p>When changes may affect customers:
+- Documentation is updated
+- Changelog entries are published
+- Targeted communication may be issued for material changes</p>
+<p>Customers are encouraged to review documentation regularly.</p>
+<hr />
+<h2 id="customer-responsibilities">Customer Responsibilities</h2>
+<p>Customers are responsible for:
+- Staying informed of platform updates
+- Testing integrations against supported versions
+- Planning upgrades or configuration changes where required</p>
+<p>PromptX provides guidance but does not automatically update customer integrations.</p>
+<hr />
+<h2 id="questions-about-platform-evolution">Questions About Platform Evolution</h2>
+<p>If you have questions about how PromptX evolves or how changes may impact your integration, contact the PromptX team.</p>
+<div style="margin-top:1.5rem">
+<a href="mailto:promptx@ve3.global
+?subject=PromptX%20Platform%20Evolution%20Query
+&body=Organisation:%0D%0AConcern:%0D%0AIntegration%20Context:"
+class="md-button md-button--primary">
+🔄 Contact About Platform Evolution
+</a>
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../deprecation/" class="btn btn-neutral float-left" title="Deprecation Policy"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../reference/api-reference/" class="btn btn-neutral float-right" title="API Reference">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../deprecation/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../reference/api-reference/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

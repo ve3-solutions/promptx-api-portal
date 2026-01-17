@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="PromptX" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Changelog - PromptX API Developer Portal</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Changelog";
+        var mkdocs_page_input_path = "reference/changelog.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> PromptX API Developer Portal
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Welcome & Orientation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../orientation/welcome/">Welcome</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../orientation/api-vs-ui/">APIs vs UI</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../orientation/principles/">Core Principles</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Access & Governance</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/access-models/">Access Models</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/authentication/">Authentication & Authorisation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/approval-workflow/">Approval Workflow</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../access-governance/rate-limits/">Rate Limits & Quotas</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">API Capabilities</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capabilities/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capabilities/core-domains/">Core Domains</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capabilities/data-handling/">Data Handling</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../capabilities/non-goals/">What APIs Are Not For</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/quickstart/">Quick Start</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/example-use-cases/">Example Use Cases</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/sdks/">SDKs & Libraries</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Operations</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operations/security/">Security</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operations/logging/">Logging & Auditability</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../operations/reliability/">Reliability & Errors</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Versioning & Lifecycle</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lifecycle/versioning/">Versioning</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lifecycle/deprecation/">Deprecation Policy</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../lifecycle/evolution/">Platform Evolution</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Reference</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../api-reference/">API Reference</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Changelog</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#changelog-philosophy">Changelog Philosophy</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#summary-of-api-evolution-indicative">Summary of API Evolution (Indicative)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#early-platform-foundation">Early Platform Foundation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#governance-and-control-enhancements">Governance and Control Enhancements</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#knowledge-and-prompt-governance">Knowledge and Prompt Governance</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#scalability-and-reliability-improvements">Scalability and Reliability Improvements</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#versioned-api-changes">Versioned API Changes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#non-functional-changes">Non-Functional Changes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#preview-and-limited-availability-features">Preview and Limited Availability Features</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#future-changelog-entries">Future Changelog Entries</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#questions-about-api-changes">Questions About API Changes</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../faq/">FAQ</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Support</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../support/getting-help/">Getting Help</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../support/reporting-issues/">Reporting Issues</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">PromptX API Developer Portal</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Reference</li>
+      <li class="breadcrumb-item active">Changelog</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="api-changes-changelog">API Changes &amp; Changelog</h1>
+<p>This page provides a high-level view of how PromptX APIs have evolved over time.</p>
+<p>PromptX has been in active use for multiple years and has evolved through <strong>controlled, incremental improvements</strong> rather than frequent disruptive changes.</p>
+<p>This changelog intentionally focuses on <strong>categories of change</strong> rather than exhaustive technical detail.</p>
+<hr />
+<h2 id="changelog-philosophy">Changelog Philosophy</h2>
+<p>PromptX API changes follow these principles:</p>
+<ul>
+<li>Stability over frequent change</li>
+<li>Backward compatibility wherever possible</li>
+<li>Governance-first evolution</li>
+<li>Explicit versioning for breaking changes</li>
+<li>No silent behavioural changes</li>
+</ul>
+<p>Not all improvements result in externally visible API changes.</p>
+<hr />
+<h2 id="summary-of-api-evolution-indicative">Summary of API Evolution (Indicative)</h2>
+<h3 id="early-platform-foundation">Early Platform Foundation</h3>
+<p>Initial API capabilities focused on:
+- Secure authentication and access control
+- Core conversational interactions
+- Tenant isolation and auditability
+- Basic integration support for internal systems</p>
+<p>These capabilities formed the stable foundation of the platform.</p>
+<hr />
+<h3 id="governance-and-control-enhancements">Governance and Control Enhancements</h3>
+<p>Subsequent iterations introduced:
+- Improved role-based access controls
+- Policy enforcement at API boundaries
+- Rate limiting and quota controls
+- Enhanced audit logging and observability</p>
+<p>These changes strengthened enterprise and public-sector readiness.</p>
+<hr />
+<h3 id="knowledge-and-prompt-governance">Knowledge and Prompt Governance</h3>
+<p>As PromptX matured, APIs were extended to support:
+- Governed knowledge stacks
+- Shared workspace prompts
+- Centralised prompt configuration
+- Consistent behaviour across large user populations</p>
+<p>These enhancements enabled large-scale, public-facing use cases.</p>
+<hr />
+<h3 id="scalability-and-reliability-improvements">Scalability and Reliability Improvements</h3>
+<p>Ongoing improvements focused on:
+- Performance optimisation
+- Higher concurrency support
+- Improved error handling and resilience
+- Operational monitoring enhancements</p>
+<p>Such changes are typically non-breaking.</p>
+<hr />
+<h2 id="versioned-api-changes">Versioned API Changes</h2>
+<p>Breaking changes are introduced only through <strong>explicit versioning</strong>.</p>
+<p>Older versions:
+- Remain available for defined support windows
+- Are deprecated following the published Deprecation Policy
+- Are not removed without advance notice</p>
+<p>Exact timelines may vary by capability.</p>
+<hr />
+<h2 id="non-functional-changes">Non-Functional Changes</h2>
+<p>Many platform improvements do not change API contracts, including:
+- Infrastructure upgrades
+- Security hardening
+- Performance tuning
+- Internal tooling improvements</p>
+<p>These changes are continuous and may not appear in this changelog.</p>
+<hr />
+<h2 id="preview-and-limited-availability-features">Preview and Limited Availability Features</h2>
+<p>Some capabilities may be introduced as:
+- Preview features
+- Limited availability APIs
+- Customer-specific integrations</p>
+<p>Such features:
+- Are explicitly labelled
+- May evolve more rapidly
+- Are not guaranteed to reach general availability</p>
+<hr />
+<h2 id="future-changelog-entries">Future Changelog Entries</h2>
+<p>As PromptX continues to evolve, this page may include:
+- Version-specific change summaries
+- High-level release notes
+- Links to detailed documentation (where appropriate)</p>
+<p>This page is intended to provide <strong>context</strong>, not exhaustive technical history.</p>
+<hr />
+<h2 id="questions-about-api-changes">Questions About API Changes</h2>
+<p>If you have questions about API changes, compatibility, or upgrade planning, contact the PromptX team.</p>
+<div style="margin-top:1.5rem">
+<a href="mailto:promptx@ve3.global
+?subject=PromptX%20API%20Change%20Query
+&body=Organisation:%0D%0ACurrent%20Integration:%0D%0AConcern:"
+class="md-button md-button--primary">
+📜 Contact About API Changes
+</a>
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../api-reference/" class="btn btn-neutral float-left" title="API Reference"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../faq/" class="btn btn-neutral float-right" title="FAQ">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../api-reference/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../faq/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
