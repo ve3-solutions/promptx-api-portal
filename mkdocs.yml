@@ -1,0 +1,59 @@
+site_name: PromptX API Developer Portal
+site_description: Governed enterprise APIs for PromptX
+site_author: PromptX
+
+theme:
+  name: readthedocs
+  favicon: assets/favicon.png
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - content.code.copy
+footer:
+    copyright: © 2026 VE3 • PromptX Developer Portal
+
+nav:
+  - Home: index.md
+
+  - Welcome & Orientation:
+      - Welcome: orientation/welcome.md
+      - APIs vs UI: orientation/api-vs-ui.md
+      - Core Principles: orientation/principles.md
+
+  - Access & Governance:
+      - Overview: access-governance/overview.md
+      - Access Models: access-governance/access-models.md
+      - Authentication & Authorisation: access-governance/authentication.md
+      - Approval Workflow: access-governance/approval-workflow.md
+      - Rate Limits & Quotas: access-governance/rate-limits.md
+
+  - API Capabilities:
+      - Overview: capabilities/overview.md
+      - Core Domains: capabilities/core-domains.md
+      - Data Handling: capabilities/data-handling.md
+      - What APIs Are Not For: capabilities/non-goals.md
+
+  - Getting Started:
+      - Quick Start: getting-started/quickstart.md
+      - Example Use Cases: getting-started/example-use-cases.md
+      - SDKs & Libraries: getting-started/sdks.md
+
+  - Operations:
+      - Security: operations/security.md
+      - Logging & Auditability: operations/logging.md
+      - Reliability & Errors: operations/reliability.md
+
+  - Versioning & Lifecycle:
+      - Versioning: lifecycle/versioning.md
+      - Deprecation Policy: lifecycle/deprecation.md
+      - Platform Evolution: lifecycle/evolution.md
+
+  - Reference:
+      - API Reference: reference/api-reference.md
+      - Changelog: reference/changelog.md
+      - FAQ: reference/faq.md
+
+  - Support:
+      - Getting Help: support/getting-help.md
+      - Reporting Issues: support/reporting-issues.md
